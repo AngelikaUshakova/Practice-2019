@@ -1,18 +1,18 @@
-Привет мир!
+РџСЂРёРІРµС‚ РјРёСЂ!
 
-Я узнал про markdown.
+РЇ СѓР·РЅР°Р» РїСЂРѕ markdown.
 
-Markdown (заголовок)
+Markdown (Р·Р°РіРѕР»РѕРІРѕРє)
 
-Вы тоже можете узнать про markdown из статей: (далее список)
+Р’С‹ С‚РѕР¶Рµ РјРѕР¶РµС‚Рµ СѓР·РЅР°С‚СЊ РїСЂРѕ markdown РёР· СЃС‚Р°С‚РµР№: (РґР°Р»РµРµ СЃРїРёСЃРѕРє)
 
-https://ru.wikipedia.org/wiki/Markdown (ссылка)
+https://ru.wikipedia.org/wiki/Markdown (СЃСЃС‹Р»РєР°)
 
-https://en.wikipedia.org/wiki/Markdown (ссылка)
+https://en.wikipedia.org/wiki/Markdown (СЃСЃС‹Р»РєР°)
 
-https://guides.github.com/features/mastering-markdown/ (ссылка)
+https://guides.github.com/features/mastering-markdown/ (СЃСЃС‹Р»РєР°)
 
-Markdown в деталях (заголовок, далее таблица)
+Markdown РІ РґРµС‚Р°Р»СЏС… (Р·Р°РіРѕР»РѕРІРѕРє, РґР°Р»РµРµ С‚Р°Р±Р»РёС†Р°)
 
 Filename extensions .md, .markdown[1][2]
 
@@ -34,6 +34,6 @@ Open format? yes[7]
 
 Website http://daringfireball.net/projects/markdown
 
-Реальный пример (заголовок)
+Р РµР°Р»СЊРЅС‹Р№ РїСЂРёРјРµСЂ (Р·Р°РіРѕР»РѕРІРѕРє)
 
-https://github.com/Microsoft/TypeScript/blob/master/README.md (ссылка)
+https://github.com/Microsoft/TypeScript/blob/master/README.md (СЃСЃС‹Р»РєР°)
