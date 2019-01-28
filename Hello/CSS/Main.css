@@ -1,6 +1,7 @@
 body {
    padding: 0; 
    margin: 0;
+   background: #E9ECF0;
 }
 
 .head {
@@ -9,16 +10,15 @@ body {
     margin: 74px 0 0 74px;
     width: 1199px;
     height: 262px;
-    background: #fff000;
 }
 
 .avatar {
     float: left;
-    position: absolute;
+    position: relative;
     display: inline-block;
     width:  387px;
     height: 262px;
-    background: #ff23f1;
+    background: #FEFEFE;
 }
 
 .info {
@@ -29,19 +29,17 @@ body {
     padding-top: 40px; 
     width:  709px;
     height: 222px;
-    background: #111fff;
+    background: #FEFEFE;
     font-size: 16px;
     font-family: 'Signika',  black;
 }
 
 .content {
     position: relative;
-    opacity: 0.5;
     display:inline-block;
     margin: 34px 0 30px 74px;
     width: 1203px;
     height: 1045px;
-    background: #f20;
 }
 
 .leftcontent {
@@ -50,7 +48,6 @@ body {
     width: 565px;
     display: inline-block;
     height: 100%;
-    background: #ff1;
 }
 
 .rightcontent {
@@ -60,8 +57,6 @@ body {
     margin-left: 79px;
     width:  557px;
     height: 100%;
-    background: #1edd;
-    
 }
 
 .block1 {
@@ -69,7 +64,7 @@ body {
     display: block;
     width:  100%;
     height:  303px;
-    background: #374;
+    background: #FEFEFE;
 }
 
 ul {
@@ -84,7 +79,7 @@ ul {
     margin-top: 29px;
     width:  100%;
     height:  286px;
-    background: #3734;
+    background: #FEFEFE;
 }
 
 .block3 {
@@ -93,7 +88,7 @@ ul {
     margin-top: 29px;
     width:  100%;
     height:  152px;
-    background: #3fff74;
+    background: #FEFEFE;
 }
 
 .block4 {
@@ -102,7 +97,7 @@ ul {
     margin-top: 29px;
     width:  100%;
     height:  149px;
-    background: #ff8435;
+    background: #FEFEFE;
 }
 
 .block5 {
@@ -110,7 +105,7 @@ ul {
     display: block;
     width:  100%;
     height:  151px;
-    background: #ff8435;  
+    background: #DAE0E7;  
 }
 
 .block6 {
@@ -119,7 +114,7 @@ ul {
     margin-top: 28px;
     width:  100%;
     height:  151px;
-    background: #3fff74;
+    background: #DAE0E7;
 }
 
 .block8 {
@@ -128,7 +123,7 @@ ul {
     margin-top: 30px;
     width:  100%;
     height:  113px;
-    background: #3734;
+    background: #DAE0E7;
 }
 
 .block7 {
@@ -142,7 +137,7 @@ ul {
     margin-top: 30px;
     width:  100%;
     height:  115px;
-    background: #ffff3f;
+    background: #DAE0E7;
 }
 
 .block10 {
@@ -151,7 +146,7 @@ ul {
     margin-top: 30px;
     width:  100%;
     height:  357px;
-    background: #f33f3f;
+    background: #FEFEFE;
 }
 
 h2 {
@@ -177,14 +172,35 @@ td {
 }
 
 .avatar div {
-    width: 94.4px;
+    width: 96.4px;
     height: 68px;
     float: left;
     margin-top: 192px;
-    background: #fff;
-    border: 1px solid;
 }
 
 p {
     text-align: center;
+}
+
+img {
+    position: absolute;
+    left: 21px;
+    top: 31px;
+    width: 130px;
+}
+
+.blue {
+    background: #18C3EB;
+}
+
+.red {
+    background: #F95250;
+}
+
+.green {
+    background: #0ECCC0;
+}
+
+.black {
+    background: #32485E;
 }
