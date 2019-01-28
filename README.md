@@ -17,7 +17,6 @@
 Filename extensions | .md, .markdown[1][2]
 --------------------|--------------------
 Internet media type | text/markdown[2]
-
 Uniform Type Identifier (UTI) | net.daringfireball.markdown
 Developed by | John Gruber
 Initial release | March 19, 2004 (14 years ago)[3][4]
