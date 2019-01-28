@@ -2,6 +2,8 @@ body {
    padding: 0; 
    margin: 0;
    background: #E9ECF0;
+   color:#32485E;
+   font-family: 'Signika';
 }
 
 .head {
@@ -26,12 +28,11 @@ body {
     position: relative;
     float: right;
     padding-left: 24px;
-    padding-top: 40px; 
+    padding-top: 38px; 
     width:  709px;
     height: 222px;
     background: #FEFEFE;
     font-size: 16px;
-    font-family: 'Signika',  black;
 }
 
 .content {
@@ -141,7 +142,7 @@ ul {
 }
 
 .block10 {
-     position: relative;
+    position: relative;
     display: block;
     margin-top: 30px;
     width:  100%;
@@ -156,12 +157,14 @@ h2 {
 
 table {
     border-spacing:  0;
+    text-align: justify;
 }
 
 td {
-   padding-top: 30px;
+   padding-top: 29px;
    padding-left: 3px;
    line-height: 1.7;
+    width: 52%;
 }
 
 .h1 {
@@ -169,18 +172,23 @@ td {
     font-size: 35px;
     padding: 0;
     padding-top: 20px;
+    text-align: left;
+    letter-spacing: -0.2px;
 }
 
 .avatar div {
-    width: 96.4px;
-    height: 68px;
+    width: 96.7px;
+    height: 71px;
     float: left;
     margin-top: 192px;
+    color: #FEFEFE;
+    font-size: 14px;
+    font-family: 'Signika';
+    text-align: center;
+    line-height: 96px;
 }
 
-p {
-    text-align: center;
-}
+
 
 img {
     position: absolute;
@@ -190,17 +198,115 @@ img {
 }
 
 .blue {
-    background: #18C3EB;
+    position: relative;
+    background: #18C3EB url("/img/sym1.png") no-repeat 50% 30%;
 }
 
 .red {
-    background: #F95250;
+    background: #F95250 url("/img/sym2.png") no-repeat 50% 30%;;
 }
 
 .green {
-    background: #0ECCC0;
+    background: #0ECCC0 url("/img/sym3.png") no-repeat 50% 30%;;;
 }
 
 .black {
-    background: #32485E;
+    background: #32485E url("/img/sym4.png") no-repeat 48% 30%;;;
 }
+
+.email {
+    position: relative;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-top: 35px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+td {
+    
+}
+
+
+
+.email p {
+    letter-spacing: 2px;
+    color: #F95250;
+}
+
+.bold {
+    font-weight:bolder ;
+}
+
+.fontblue {
+        color: #75D4F1;
+}
+
+.avatar p {
+    position: absolute;
+    left: 49.6%;
+    top:16%;
+    font-size: 26px;
+}
+
+.avatar p span {
+    font-size: 17px;
+}
+
+hr {
+    margin-top:34px;
+    width: 243px;
+}
+
+/*
+.rating-wrapper {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rating-input {
+  position: absolute;
+  left: 0;
+  top: -50px;
+}
+
+.rating-star:hover,
+.rating-star:hover~.rating-star {
+  background-position: 0 0;
+}
+
+.rating-wrapper:hover .rating-star:hover,
+.rating-wrapper:hover .rating-star:hover~.rating-star,
+.rating-input:checked~.rating-star {
+  background-position: 0 0;
+}
+
+.rating-star,
+.rating-wrapper:hover .rating-star {
+  float: right;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url('http://css-stars.com/wp-content/uploads/2013/12/stars.png') 0 -16px;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  .responsive-ad {
+    display: none;
+    text-align: center;
+  }
+  .responsive-ad-device {
+    display: block;
+  }
+}
+
+@media screen and (min-device-width: 960px) {
+  .responsive-ad-device {
+    display: none;
+  }
+  .responsive-ad {
+    display: block;
+    text-align: center;
+  }
+}
+*/
