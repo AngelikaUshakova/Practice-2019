@@ -3,7 +3,7 @@ body {
    margin: 0;
    background: #E9ECF0;
    color:#32485E;
-   font-family: 'Signika';
+   font-family: 'Calibri';
 }
 
 .head {
@@ -32,7 +32,6 @@ body {
     width:  709px;
     height: 222px;
     background: #FEFEFE;
-    font-size: 16px;
 }
 
 .content {
@@ -129,7 +128,7 @@ ul {
 
 .block7 {
     margin-top: 30px;
-    border-top: 3px dotted grey;
+    border-top: 3px dotted #D9DFE6;
 }
 
 .block9 {
@@ -165,15 +164,11 @@ td {
    padding-left: 3px;
    line-height: 1.7;
     width: 52%;
+    font-size: 17px;
 }
 
 .h1 {
-    line-height: 0;
-    font-size: 35px;
-    padding: 0;
-    padding-top: 20px;
-    text-align: left;
-    letter-spacing: -0.2px;
+   font-family: 'Signika';
 }
 
 .avatar div {
@@ -183,12 +178,9 @@ td {
     margin-top: 192px;
     color: #FEFEFE;
     font-size: 14px;
-    font-family: 'Signika';
     text-align: center;
     line-height: 96px;
 }
-
-
 
 img {
     position: absolute;
@@ -215,19 +207,14 @@ img {
 }
 
 .email {
+    font-family: 'Signika';
     position: relative;
     font-size: 20px;
     padding-left: 30px;
     padding-top: 35px;
-    line-height: 1.1;
+    line-height: 1;
     text-align: center;
 }
-
-td {
-    
-}
-
-
 
 .email p {
     letter-spacing: 2px;
@@ -246,11 +233,12 @@ td {
     position: absolute;
     left: 49.6%;
     top:16%;
-    font-size: 26px;
+    font-size: 27px;
 }
 
 .avatar p span {
     font-size: 17px;
+    font-family: "Calibri"
 }
 
 hr {
@@ -310,3 +298,12 @@ hr {
   }
 }
 */
+
+.h {
+     line-height: 0;
+    font-size: 35px;
+    padding: 0;
+    padding-top: 20px;
+    text-align: left;
+    letter-spacing: -0.2px;
+}
