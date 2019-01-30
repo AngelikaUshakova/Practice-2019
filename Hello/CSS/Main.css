@@ -455,7 +455,8 @@ a {
     background: #0ECCC0;
     left: 340px;
     font-size: 12px;
-    letter-spacing: 0.9px
+    letter-spacing: 0.9px;
+    color: white ;
 }
 
 .rightcontent .location {
