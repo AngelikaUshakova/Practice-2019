@@ -57,7 +57,7 @@ body {
     position: relative;
     float: right;
     margin-right: 41px;
-    width:  515px;
+    width:  516px;
     height: 100%;
 }
 
@@ -147,9 +147,12 @@ ul {
     position: relative;
     display: block;
     margin-top: 30px;
-    width:  100%;
-    height:  357px;
+    width:  538px;
+    height:  344px;
     background: #FEFEFE;
+    border-radius: 0 !important;
+    padding-left: 18px !important;
+    padding-right: 0!important;
 }
 
 h2 {
@@ -315,7 +318,7 @@ hr {
 .content .h1 span:nth-child(1) {
     margin-left: 6px;
     font-family: "Lato";
-    font-size: 17px;
+    font-size: 16px;
     text-align: left;
     color: #C2C8D0;
     word-spacing: -1;
@@ -363,7 +366,7 @@ hr {
     letter-spacing: -0.4px;
 }
 
-.rightcontent div:not(.button) {
+.rightcontent div {
     color: #6E7B8B;
 }
 
@@ -515,5 +518,187 @@ a {
     background: url("../Img/rate2.png") no-repeat;
     background-size: 86px 13px;
     left: 448px;
+    bottom: -3px;
+}
+
+.block10 .icons div:nth-child(1):not(.bar) {
+    background: url("../Img/icon1.png") no-repeat;
+    background-size: 68px 68px;
+}
+
+.icons {
+    margin: 8px 0;
+}
+
+.icons div{
+    float: left;
+    width: 72px;
+    height: 94px;
+    font-size: 12px;
+    line-height:  170px;
+}
+
+.block10 .icons div:nth-child(2):not(.bar) {
+    background: url("../Img/icon2.png") no-repeat 18px 0;
+    background-size: 68px 68px;
+    padding-left: 25px;
+}
+
+.block10 .icons div:nth-child(3):not(.bar) {
+    background: url("../Img/icon3.png") no-repeat 13px 0;
+    background-size: 68px 68px;
+    padding-left: 16px;
+}
+
+.block10 .icons div:nth-child(4):not(.bar) {
+    background: url("../Img/icon4.png") no-repeat 14px 0;
+    background-size: 68px 68px;
+    padding-left: 13px;
+}
+
+.block10 .icons div:nth-child(5):not(.bar) {
+    background: url("../Img/icon5.png") no-repeat 20px 0;
+    background-size: 68px 68px;
+    padding-left: 17px;
+}
+
+.block10 .icons div:nth-child(6):not(.bar) {
+    background: url("../Img/icon6.png") no-repeat 23px 0;
+    background-size: 68px 68px;
+    padding-left: 21px;
+}
+
+
+.bar {
+    position: absolute;
+    top: 110px;
+    width: 540px;
+    height: 180px;
+}
+
+progress {
+  position: relative;
+  background-color: #f3f3f3;
+  border: 0;
+  height: 0px;
+  border-radius: 9px;
+}
+
+progress::-webkit-progress-bar {
+   background: #DAE0E7;
+    height: 13px;
+    border-radius: 6px;
+    width: 242px;
+}
+progress::-webkit-progress-value {
+    background: #0ECCC0;
+    border-radius: 6px 0 0 6px;
+}
+progress::-moz-progress-bar {
+  /* стилевые правила */
+}
+progress:nth-child(1) {
+    top: 40px;
+}
+
+.leftbar {
+    position: absolute;
+    float: left;
+}
+
+.rightbar {
+    position: absolute;
+    left: 285px;
+}
+.rightbar progress::-webkit-progress-value {
+    background: #18C3EB;
+}
+.sign {
+    margin-top: 31.7px;
+    font-size: 15px;
+    color: #32485E !important;
+}
+
+ .leftbar .value:nth-child(1) {
+    position: absolute;
+    background: url("../Img/80%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 172px;
+    bottom: 145;
+}
+
+ .leftbar .value:nth-child(2) {
+    position: absolute;
+    background: url("../Img/55%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 112px;
+    bottom: 92px;
+}
+
+ .leftbar .value2 {
+     position: absolute;
+    background: url("../Img/95%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 207px;
+    bottom: 46px;
+}
+
+
+.value4 {
+     position: absolute;
+    background: url("../Img/85%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 185px;
+    bottom: -5px;
+}
+
+
+ .value5 {
+     position: absolute;
+    background: url("../Img/60%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 151px;
+    bottom: 144px;
+}
+
+
+ .value6 {
+     position: absolute;
+    background: url("../Img/75%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 166px;
+    bottom: 94px;
+}
+
+
+.value7 {
+    position: absolute;
+    background: url("../Img/55%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 125px;
+    bottom: 47px;
+}
+
+.value8{
+    position: absolute;
+    background: url("../Img/60%25.png") no-repeat;
+    background-size: 40px 23px;
+    width: 50px;
+    height: 30px;
+    left: 151px;
     bottom: -3px;
 }
