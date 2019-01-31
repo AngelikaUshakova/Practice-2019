@@ -33,7 +33,8 @@
     }
 
     function get(url) {
-        return resourceCache[url];
+        var res = resourceCache[url];
+        return res;
     }
 
     function isReady() {

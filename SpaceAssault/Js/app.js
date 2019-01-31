@@ -18,6 +18,7 @@ document.body.appendChild(canvas);
 
 var lastTime;
 function main() {
+    // debugger;
     var now = Date.now();
     var dt = (now - lastTime) / 1000.0;
 
@@ -36,13 +37,48 @@ resources.load([
 function init() {
     terrainPattern = ctx.createPattern(resources.get('img/terrain.png'), 'repeat');
 
+    initmegaliths();
+
     document.getElementById('play-again').addEventListener('click', function() {
         reset();
     });
 
+
     reset();
     lastTime = Date.now();
     main();
+}
+// initialization megaliths
+function initmegaliths() {
+   var sizemegalith = 60;
+   var countmegaliths =  Math.round(Math.random() + 3.5);
+// init random position
+   for( var i = 0; i < countmegaliths; i++ ){
+
+    var pos1 = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
+    var pos2 = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
+   
+        for( var j = 0; j < i; j++ )
+        {
+            if (!( (pos1 + sizemegalith) <= megaliths[j].pos[0] || pos1  > (megaliths[j].pos[0] + sizemegalith) || 
+                (pos2 + sizemegalith) <= megaliths[j].pos[1]  || pos2  > (megaliths[j].pos[1] + sizemegalith)))
+                {
+                    var pos1 = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
+                    var pos2 = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
+                    j = 0;
+                }
+         }
+         
+    if (Math.round(Math.random()) == 0 )
+        var type = 210;
+    else
+        var type = 270;
+
+    megaliths[i] = { 
+                        pos: [pos1,pos2],
+                        sprite: new Sprite('img/sprites.png', [0,type], [60,60], 0, [0])
+                    }
+    }
 }
 
 resources.onReady(init);
@@ -55,6 +91,7 @@ var player = {
 var bullets = [];
 var enemies = [];
 var explosions = [];
+var megaliths = [];
 
 var lastFire = Date.now();
 var gameTime = 0;
@@ -212,6 +249,16 @@ function checkCollisions() {
             }
         }
 
+
+        if(boxCollides(pos, size, player.pos, player.sprite.size)) {
+            gameOver();
+        }
+    }
+    
+    for(var i=0; i<megaliths.length; i++) {
+        var pos = megaliths[i].pos;
+        var size = megaliths[i].sprite.size;
+        
         if(boxCollides(pos, size, player.pos, player.sprite.size)) {
             gameOver();
         }
@@ -242,8 +289,8 @@ function render() {
     if(!isGameOver) {
         renderEntity(player);
     }
-
     renderEntities(bullets);
+    renderEntities(megaliths);
     renderEntities(enemies);
     renderEntities(explosions);
 };
