@@ -51,16 +51,24 @@ function init() {
 function initManna() {
     if(manna.length < 12)
     {
-       if(manna.length < 4 || Math.round(Math.random()) == 0 ) 
+       if(manna.length < 4 || Math.random() < 1 - Math.pow(.993, gameTime) ) 
          var pos1 = Math.random()*(canvas.width - 70);
          var pos2 = Math.random()*(canvas.height - 70);
          
-         manna.push(
-             {
-                 pos: [pos1,pos2],
-                 sprite: new Sprite('img/sprites.png', [0, 154], [60, 60],
-                 0, [0, 1, 2, 3], null, true)
-             });
+         for(var j=0; j<megaliths.length; j++) {
+            var pos2 = megaliths[j].pos;
+            var size2 = megaliths[j].sprite.size;
+
+            if(!(boxCollides([pos1,pos2], [60, 60], pos2, size2))) {
+
+                manna.push(
+                    {
+                        pos: [pos1,pos2],
+                        sprite: new Sprite('img/sprites.png', [0, 153], [60, 60],
+                        0, [0, 1, 2, 3], null, true)
+                    });
+            }
+        }
     }
 }
 
@@ -230,22 +238,6 @@ function updateEntities(dt) {
             i--;
         }
     }
-
-    //megalihts and enemies collides
-    for(var i=0; i<megaliths.length; i++) {
-        var pos = megaliths[i].pos;
-        var size = megaliths[i].sprite.size;
-
-        for(var j=0; j<enemies.length; j++) {
-            var pos2 = enemies[j].pos;
-            var size2 = enemies[j].sprite.size;
-            if(boxCollides(pos, size, pos2, size2)) {
-                if (Math.round(Math.random())==0)
-                 enemies[j].pos[1]-=60;
-                else  enemies[j].pos[1]+=60;
-            }
-        }
-    }
 }
 
 
@@ -308,6 +300,7 @@ function checkCollisions() {
             gameOver();
         }
     }
+
     for(var i=0; i<manna.length; i++)
     {
         var pos = manna[i].pos;
@@ -315,7 +308,23 @@ function checkCollisions() {
 
         if (boxCollides(pos, size, player.pos, player.sprite.size))
         {
-            manna[i].sprite.speed = 6;
+            manna[i].sprite.speed = 9;
+        }
+    }
+
+     //megalihts and enemies collides
+    for(var i=0; i<megaliths.length; i++) {
+        var pos = megaliths[i].pos;
+        var size = megaliths[i].sprite.size;
+
+        for(var j=0; j<enemies.length; j++) {
+            var pos2 = enemies[j].pos;
+            var size2 = enemies[j].sprite.size;
+            if(boxCollides(pos, size, pos2, size2)) {
+                if (Math.round(Math.random())==0)
+                 enemies[j].pos[1]-=60;
+                else  enemies[j].pos[1]+=60;
+            }
         }
     }
 }
