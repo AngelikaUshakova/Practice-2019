@@ -28,16 +28,17 @@ canvas {
 }
 
 #score {
-    float: right;
     color: white;
-    font-size: 2em;
-    margin-left: 30px
+    font-size: 1em;
 }
-
-#mannascore{
-    float: right;
+.scoremanna {
     color: white;
-    font-size: 2em;
+    font-size: 1em;
+    float: right;
+}
+#mannascore{
+    color: white;
+    font-size: 1em;
 }
 
 
