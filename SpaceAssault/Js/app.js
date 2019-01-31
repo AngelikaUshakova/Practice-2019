@@ -111,7 +111,7 @@ function update(dt) {
     handleInput(dt);
     updateEntities(dt);
 
-    if(Math.random() < 1 - Math.pow(.993, gameTime)) {
+    if(Math.random() < 1 - Math.pow(.995, gameTime)) {
         enemies.push({
             pos: [canvas.width,
                   Math.random() * (canvas.height - 39)],
@@ -201,6 +201,22 @@ function updateEntities(dt) {
             i--;
         }
     }
+
+    //megalihts and enemies collides
+    for(var i=0; i<megaliths.length; i++) {
+        var pos = megaliths[i].pos;
+        var size = megaliths[i].sprite.size;
+
+        for(var j=0; j<enemies.length; j++) {
+            var pos2 = enemies[j].pos;
+            var size2 = enemies[j].sprite.size;
+            if(boxCollides(pos, size, pos2, size2)) {
+                if (Math.round(Math.random())==0)
+                 enemies[j].pos[1]-=60;
+                else  enemies[j].pos[1]+=70;
+            }
+        }
+    }
 }
 
 
@@ -263,6 +279,7 @@ function checkCollisions() {
             gameOver();
         }
     }
+   
 }
 
 function checkPlayerBounds() {
