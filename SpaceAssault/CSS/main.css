@@ -31,18 +31,20 @@ canvas {
     float: right;
     color: white;
     font-size: 2em;
+    margin-left: 30px
 }
+
+#mannascore{
+    float: right;
+    color: white;
+    font-size: 2em;
+}
+
 
 .key {
     color: #aaff5d;
 }
-/*
-.key:nth-child(1) {
-    background: url("../img/arrows.png") no-repeat;
-    width: 20px;
-    height: 10px;
-}
-*/
+
 #game-over, #game-over-overlay {
     margin: auto;
     width: 512px;
