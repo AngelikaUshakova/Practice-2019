@@ -49,26 +49,31 @@ function init() {
 }
 
 function initManna() {
+
+    var check = false;
+
     if(manna.length < 12)
     {
-       if(manna.length < 4 || Math.random() < 1 - Math.pow(.993, gameTime) ) 
-         var pos1 = Math.random()*(canvas.width - 70);
-         var pos2 = Math.random()*(canvas.height - 70);
+       if(manna.length < 4 || Math.random() < 1 - Math.pow(.999, gameTime) ) 
+         var mannaPosx = Math.round(Math.random()*(canvas.width - 70));
+         var mannaPosy = Math.round(Math.random()*(canvas.height - 70));
          
          for(var j=0; j<megaliths.length; j++) {
-            var pos2 = megaliths[j].pos;
-            var size2 = megaliths[j].sprite.size;
+            var megalithPos = megaliths[j].pos;
+            var megalithSize = megaliths[j].sprite.size;
 
-            if(!(boxCollides([pos1,pos2], [60, 60], pos2, size2))) {
-
-                manna.push(
-                    {
-                        pos: [pos1,pos2],
-                        sprite: new Sprite('img/sprites.png', [0, 153], [60, 60],
-                        0, [0, 1, 2, 3], null, true)
-                    });
+            if(boxCollides([mannaPosx,mannaPosy], [60, 60], megalithPos, megalithSize))
+            {
+                check = true;
             }
         }
+        if(!check)
+        manna.push(
+            {
+                pos: [mannaPosx,mannaPosy],
+                sprite: new Sprite('img/sprites.png', [0, 153], [60, 60],
+                0, [0, 1, 2, 3], null, true)
+            });
     }
 }
 
@@ -79,16 +84,16 @@ function initMegaliths() {
 // init random position
    for( var i = 0; i < countmegaliths; i++ ){
 
-    var pos1 = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
-    var pos2 = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
+    var megalithPosx = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
+    var megalithPosy = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
    
         for( var j = 0; j < i; j++ )
         {
-            if (!( (pos1 + sizemegalith) <= megaliths[j].pos[0] || pos1  > (megaliths[j].pos[0] + sizemegalith) || 
-                (pos2 + sizemegalith) <= megaliths[j].pos[1]  || pos2  > (megaliths[j].pos[1] + sizemegalith)))
+            if (!( (megalithPosx + sizemegalith) <= megaliths[j].pos[0] || megalithPosx  > (megaliths[j].pos[0] + sizemegalith) || 
+                (megalithPosy + sizemegalith) <= megaliths[j].pos[1]  || megalithPosy  > (megaliths[j].pos[1] + sizemegalith)))
                 {
-                    var pos1 = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
-                    var pos2 = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
+                    var megalithPosx = Math.round(Math.random()*(canvas.width*0.6) + canvas.width*0.3);
+                    var megalithPosy = Math.round(Math.random()*(canvas.height*0.7) + canvas.height*0.2);
                     j = 0;
                 }
          }
@@ -99,7 +104,7 @@ function initMegaliths() {
         var type = 270;
 
     megaliths[i] = { 
-                        pos: [pos1,pos2],
+                        pos: [megalithPosx,megalithPosy],
                         sprite: new Sprite('img/sprites.png', [0,type], [60,60], 0, [0])
                     }
     }
@@ -314,13 +319,13 @@ function checkCollisions() {
 
      //megalihts and enemies collides
     for(var i=0; i<megaliths.length; i++) {
-        var pos = megaliths[i].pos;
-        var size = megaliths[i].sprite.size;
+        var megalithPos = megaliths[i].pos;
+        var megalithSize = megaliths[i].sprite.size;
 
         for(var j=0; j<enemies.length; j++) {
-            var pos2 = enemies[j].pos;
-            var size2 = enemies[j].sprite.size;
-            if(boxCollides(pos, size, pos2, size2)) {
+            var enemiesPos = enemies[j].pos;
+            var enemiesSize = enemies[j].sprite.size;
+            if(boxCollides(megalithPos, megalithSize, enemiesPos, enemiesSize)) {
                 if (Math.round(Math.random())==0)
                  enemies[j].pos[1]-=60;
                 else  enemies[j].pos[1]+=60;
