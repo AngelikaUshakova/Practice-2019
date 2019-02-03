@@ -54,9 +54,9 @@ function initManna() {
 
     if(manna.length < 12)
     {
-       if(manna.length < 4 || Math.random() < 1 - Math.pow(.999, gameTime) ) 
-         var mannaPosx = Math.round(Math.random()*(canvas.width - 70));
-         var mannaPosy = Math.round(Math.random()*(canvas.height - 70));
+       if(manna.length < 4 || Math.random() < 1 - Math.pow(.999, 1.2) ) {
+         var mannaPosx = Math.round(Math.random()*(canvas.width - 80));
+         var mannaPosy = Math.round(Math.random()*(canvas.height - 80));
          
          for(var j=0; j<megaliths.length; j++) {
             var megalithPos = megaliths[j].pos;
@@ -74,6 +74,7 @@ function initManna() {
                 sprite: new Sprite('img/sprites.png', [0, 153], [60, 60],
                 0, [0, 1, 2, 3], null, true)
             });
+        }
     }
 }
 
@@ -141,7 +142,6 @@ function update(dt) {
     gameTime += dt;
     handleInput(dt);
     updateEntities(dt);
-    initManna();
 
     if(Math.random() < 1 - Math.pow(.997, gameTime)) {
         enemies.push({
@@ -151,6 +151,8 @@ function update(dt) {
                                6, [0, 1, 2, 3, 2, 1])
         });
     }
+
+    initManna();
 
     checkCollisions();
 
