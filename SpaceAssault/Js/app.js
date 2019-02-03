@@ -80,7 +80,8 @@ function initManna() {
 
 // initialization megaliths
 function initMegaliths() {
-   var sizemegalith = 120;
+   var widthmegalith = 180;
+   var heightmegalith = 100;
    var countmegaliths =  Math.round(Math.random()*3 + 2.5);
 // init random position
    for( var i = 0; i < countmegaliths; i++ )
@@ -91,7 +92,7 @@ function initMegaliths() {
    
         for( var j = 0; j < i; j++ )
         {
-            if (boxCollides([megalithPosx,megalithPosy],[sizemegalith,sizemegalith],megaliths[j].pos,[sizemegalith,sizemegalith]))
+            if (boxCollides([megalithPosx,megalithPosy],[widthmegalith,heightmegalith],megaliths[j].pos,[widthmegalith,heightmegalith]))
                 {
                     var megalithPosx = Math.round(Math.random()*(canvas.width*0.68 + 1) + canvas.width*0.2 - 0.5);
                     var megalithPosy = Math.round(Math.random()*(canvas.height*0.67 + 1) + canvas.height*0.1 - 0.5);
