@@ -161,21 +161,48 @@ function update(dt) {
     mannascoreEl.innerHTML = mannascore;
 };
 
+function checkPlayerCollisions(dx, dy = 0) {
+
+    
+    for(var i=0; i<megaliths.length; i++) {
+        var pos = megaliths[i].pos;
+        var size = megaliths[i].sprite.size;
+        
+        if(boxCollides(pos, size, [player.pos[0] + dx, player.pos[1] + dy], player.sprite.size)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 function handleInput(dt) {
     if(input.isDown('DOWN') || input.isDown('s')) {
-        player.pos[1] += playerSpeed * dt;
+        if(!(checkPlayerCollisions(0, playerSpeed * dt)))
+        {
+            player.pos[1] += playerSpeed * dt;
+        }
     }
 
     if(input.isDown('UP') || input.isDown('w')) {
-        player.pos[1] -= playerSpeed * dt;
+        if(!(checkPlayerCollisions(0, -playerSpeed * dt)))
+        {
+            player.pos[1] -= playerSpeed * dt;
+        }
     }
 
     if(input.isDown('LEFT') || input.isDown('a')) {
-        player.pos[0] -= playerSpeed * dt;
+        if(!(checkPlayerCollisions(dx = -playerSpeed * dt)))
+        {
+            player.pos[0] -= playerSpeed * dt;
+        }
     }
 
     if(input.isDown('RIGHT') || input.isDown('d')) {
-        player.pos[0] += playerSpeed * dt;
+        if(!(checkPlayerCollisions(dx = playerSpeed * dt)))
+        {
+            player.pos[0] += playerSpeed * dt;
+        }
     }
 
     if(input.isDown('SPACE') &&
@@ -300,15 +327,7 @@ function checkCollisions() {
         }
     }
     
-    for(var i=0; i<megaliths.length; i++) {
-        var pos = megaliths[i].pos;
-        var size = megaliths[i].sprite.size;
-        
-        if(boxCollides(pos, size, player.pos, player.sprite.size)) {
-            gameOver();
-        }
-    }
-
+   
     for(var i=0; i<manna.length; i++)
     {
         var pos = manna[i].pos;
@@ -353,6 +372,7 @@ function checkPlayerBounds() {
         player.pos[1] = canvas.height - player.sprite.size[1];
     }
 }
+
 
 function render() {
     ctx.fillStyle = terrainPattern;
