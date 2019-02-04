@@ -175,7 +175,6 @@ function checkPlayerCollisions(dx, dy = 0) {
     return false;
 }
 
-
 function handleInput(dt) {
     if(input.isDown('DOWN') || input.isDown('s')) {
         if(!(checkPlayerCollisions(0, playerSpeed * dt)))
@@ -348,9 +347,7 @@ function checkCollisions() {
             var enemiesPos = enemies[j].pos;
             var enemiesSize = enemies[j].sprite.size;
             if(boxCollides(megalithPos, megalithSize, enemiesPos, enemiesSize)) {
-                if (Math.round(Math.random())==0)
-                 enemies[j].pos[1]-=60;
-                else  enemies[j].pos[1]+=60;
+                 enemies[j].pos[1]-=5;
             }
         }
     }
