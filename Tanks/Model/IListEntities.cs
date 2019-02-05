@@ -8,7 +8,7 @@ namespace Model
 {
     class ListEntities
     {
-        Player Player { get; set; }
+        Player Player { get; set; } 
         List<Enemies> Enemies { get; set; }
         List<Apple> Apples { get; set; }
         List<Wall> Walls { get; set; }
