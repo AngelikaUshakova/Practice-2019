@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    interface IListEntities
+    class ListEntities
     {
         Player Player { get; set; }
         List<Enemies> Enemies { get; set; }
