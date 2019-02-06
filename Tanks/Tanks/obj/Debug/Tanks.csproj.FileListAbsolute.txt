@@ -1,0 +1,15 @@
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Tanks.exe.config
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Tanks.exe
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Tanks.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Model.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Model.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.csprojAssemblyReference.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.MainForm.resources
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.Properties.Resources.resources
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.csproj.GenerateResource.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.csproj.CoreCompileInputs.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.csproj.CopyComplete
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.exe
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\obj\Debug\Tanks.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Controller.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Tanks\bin\Debug\Controller.pdb

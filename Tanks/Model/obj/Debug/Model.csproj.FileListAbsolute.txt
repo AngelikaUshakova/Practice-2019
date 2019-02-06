@@ -1,0 +1,6 @@
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\bin\Debug\Model.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\bin\Debug\Model.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\obj\Debug\Model.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Model\obj\Debug\Model.pdb

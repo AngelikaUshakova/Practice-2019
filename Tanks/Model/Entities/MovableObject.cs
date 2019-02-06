@@ -19,7 +19,7 @@ namespace Model
         public Direction direction;
         public int speed;
 
-        public MovableObject(int x, int y, int width, int height, Direction direction, int speed)
+        public MovableObject(int x, int y, int width, int height, Direction direction, int speed = 9)
         {
             X = x;
             Y = y;

@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntitiesView\AppleView.cs" />
-    <Compile Include="EntitiesView\BulletView.cs" />
-    <Compile Include="EntitiesView\EnemyView.cs" />
-    <Compile Include="EntitiesView\ExplosionView.cs" />
-    <Compile Include="EntitiesView\PlayerView.cs" />
-    <Compile Include="EntitiesView\WallView.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{c3d2a768-facd-4310-8672-f68c4c3a6e91}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{cd35d02c-65cb-442a-b839-c027bcfb0035}</Project>
       <Name>Model</Name>

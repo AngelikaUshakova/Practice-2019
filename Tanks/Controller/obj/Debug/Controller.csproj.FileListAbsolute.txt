@@ -1,0 +1,9 @@
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\bin\Debug\Controller.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\bin\Debug\Controller.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\bin\Debug\Model.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\bin\Debug\Model.pdb
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\obj\Debug\Controller.dll
+C:\Users\Лика\Desktop\документы\Учёба\Epam1\Practice 2019\Tanks\Controller\obj\Debug\Controller.pdb

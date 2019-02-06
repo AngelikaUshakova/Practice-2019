@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tanks.Properties
+namespace Model.Properties
 {
 
 
