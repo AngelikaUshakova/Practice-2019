@@ -10,16 +10,22 @@ namespace Model.EntitiesView
     public class PlayerView : Player
     {
         Sprite sprite;
+        public Pos posPlayer = new Pos();
+        public Size sizePlayer = new Size();
 
         public PlayerView(int x, int y, int width, int height, Direction direction, int speed) : base(x, y, width, height, direction, speed)
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
+            posPlayer.posx = x;
+            posPlayer.posy = y;
+            sizePlayer.width = width;
+            sizePlayer.height = height;
             Pos pos = new Pos { posx = 0, posy = 0 };
-            Size size = new Size { width = width, height = height };
+            ChangeSprite(direction, speed, pos, sizePlayer);
+        }
 
+        public void ChangeSprite(Direction direction, int speed, Pos pos, Size size)
+        {
+            this.direction = direction;
             switch (direction)
             {
                 case Direction.LEFT:
@@ -44,7 +50,15 @@ namespace Model.EntitiesView
 
         public void Draw(Graphics graf)
         {
-            sprite.Draw(graf, X, Y);
+            sprite.Draw(graf, posPlayer.posx, posPlayer.posy);
+        }
+
+        public void InitBullet(ListEntities objects)
+        {
+            int x = posPlayer.posx + sizePlayer.width / 2;
+            int y = posPlayer.posy + sizePlayer.height / 2;
+
+            objects.Bullets.Add(new BulletView(x, y, 5, 5, direction,true));
         }
     }
 }

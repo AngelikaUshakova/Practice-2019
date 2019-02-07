@@ -18,6 +18,8 @@ namespace Tanks
         ListEntities objects;
         int mapWidth;
         int mapHeight;
+        bool gameOver = false;
+        private int score = 0;
 
         public MainForm(IPlayerController controller, ListEntities objects, int mapWidth, int mapHeight)
         {
@@ -37,33 +39,71 @@ namespace Tanks
             Bitmap map = new Bitmap(mapWidth, mapHeight);
             Graphics graf = Graphics.FromImage(map);
 
-            objects.Player.Draw(graf);
+            if (gameOver)
+            {
+                graf.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, mapWidth, mapHeight));
 
-            foreach (var wall in objects.Walls)
-            {
-                wall.Draw(graf);
+                graf.DrawString("Game Over", new Font(FontFamily.GenericSerif, 30, FontStyle.Italic),
+                    new SolidBrush(Color.White), new Point(290, 200));
+                graf.DrawString("Try again", new Font(FontFamily.GenericSerif, 20, FontStyle.Italic),
+                    new SolidBrush(Color.White), new Point(325, 250));
+                graf.DrawString("(Press space)", new Font(FontFamily.GenericSerif, 15, FontStyle.Italic),
+                    new SolidBrush(Color.White), new Point(325, 280));
             }
-            foreach (var apple in objects.Apples)
+            else
             {
-                apple.Draw(graf);
+                graf.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, mapWidth, mapHeight));
+
+                objects.Player.Draw(graf);
+
+                foreach (var wall in objects.Walls)
+                {
+                    wall.Draw(graf);
+                }
+                foreach (var apple in objects.Apples)
+                {
+                    apple.Draw(graf);
+                }
+                foreach (var enemy in objects.Enemies)
+                {
+                    enemy.Draw(graf);
+                }
+
+                foreach (var bullet in objects.Bullets)
+                {
+                    bullet.Draw(graf);
+                }
+
+                graf.DrawString(score.ToString(), new Font(FontFamily.GenericSerif, 20, FontStyle.Italic),
+                    new SolidBrush(Color.White), new Point(740, 5));
+
+                if (gameOver)
+                {
+                    graf.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, mapWidth, mapHeight));
+
+                    graf.DrawString("Game Over", new Font(FontFamily.GenericSerif, 30, FontStyle.Italic),
+                        new SolidBrush(Color.White), new Point(290, 200));
+                    graf.DrawString("Try again", new Font(FontFamily.GenericSerif, 20, FontStyle.Italic),
+                        new SolidBrush(Color.White), new Point(325, 250));
+                    graf.DrawString("(Press space)", new Font(FontFamily.GenericSerif, 15, FontStyle.Italic),
+                        new SolidBrush(Color.White), new Point(325, 280));
+                    score = 0;
+                }
             }
-            foreach (var enemy in objects.Enemies)
-            {
-                enemy.Draw(graf);
-            }
-        
+
             pictureBox1.Image = map;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            controller.Update(timer.Interval);
+            gameOver = controller.Update(timer.Interval);
+            score = controller.GetScore();
             Draw();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            controller.KeyStroke(e.KeyCode, gameOver);
         }
     }
 

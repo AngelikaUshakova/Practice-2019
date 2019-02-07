@@ -11,8 +11,8 @@ namespace Controller
    public interface IPlayerController
     {
          void NewGame();
-         void Draw(Graphics graf);
-         void Update(int msc);
-         void KeyStroke(Keys key);
+         bool Update(int msc);
+         void KeyStroke(Keys key, bool gameOver);
+         ref int GetScore();
     }
 }

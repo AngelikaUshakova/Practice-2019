@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-   public class Init
+    public class Init
     {
         Random random = new Random();
         ListEntities objects;
@@ -24,35 +24,53 @@ namespace Model
 
         public void InitApple()
         {
-
             Size sizeApple = new Size() { width = 50, height = 50 };
+
             Pos pos = new Pos()
             {
                 posx = random.Next(mapWidth - sizeApple.width),
                 posy = random.Next(mapHeight - sizeApple.height)
             };
-
-            for (int i = 0; i < objects.Walls.Count; i++)
+            int count = objects.Apples.Count;
+            for (int i = count; i < 5; i++)
             {
-                if (collisions.BoxCollides(pos, sizeApple,
-                    new Pos() { posx = objects.Walls[i].X, posy = objects.Walls[i].Y },
-                    new Size() { width = objects.Walls[i].Width, height = objects.Walls[i].Height }))
+                for (int k = 0; k < i; k++)
                 {
+                    if (collisions.BoxCollides(pos, sizeApple,
+                           objects.Apples[k].posApple, objects.Apples[k].sizeApple))
+                    {
+                        pos.posx = random.Next(mapWidth - sizeApple.width);
+                        pos.posy = random.Next(mapHeight - sizeApple.height);
+                        i = count-1;
+                    }
+                  
+                 }
+                for (int j = 0; j < objects.Walls.Count; j++)
+                {
+                    if (collisions.BoxCollides(pos, sizeApple,
+                       objects.Walls[j].posWall, objects.Walls[j].sizeWall))
+                    {
+                        pos.posx = random.Next(mapWidth - sizeApple.width);
+                        pos.posy = random.Next(mapHeight - sizeApple.height);
+                        i = count-1;
+                    }
+                }
+                if (i > count - 1)
+                {
+                    var apple = new AppleView(pos.posx, pos.posy, sizeApple.width, sizeApple.height);
+                    objects.Apples.Add(apple);
+                    count++;
                     pos.posx = random.Next(mapWidth - sizeApple.width);
                     pos.posy = random.Next(mapHeight - sizeApple.height);
-                    i = -1;
                 }
             }
-           
-            var apple = new AppleView(pos.posx, pos.posy, sizeApple.width, sizeApple.height);
-
-            objects.Apples.Add(apple);
         }
 
         public void InitPlayer()
         {
             Size sizePlayer = new Size() { width = 50, height = 50 };
-            objects.Player = new PlayerView(5, mapHeight - sizePlayer.height - 5, sizePlayer.width, sizePlayer.height,Direction.RIGHT,9);
+            objects.Player = new PlayerView(5, mapHeight - sizePlayer.height - 5, sizePlayer.width, 
+                sizePlayer.height,Direction.RIGHT,2);
         }
 
         public void InitWalls()
@@ -134,48 +152,59 @@ namespace Model
         {
             Size sizeEnemy = new Size() { width = 50, height = 50 };
 
-            for (int i = 0; i < 5; i++)
+            Pos pos = new Pos()
             {
-                Pos pos = new Pos()
+                posx = random.Next(mapWidth - sizeEnemy.width),
+                posy = random.Next(mapHeight - sizeEnemy.height)
+            };
+            int count = objects.Enemies.Count;
+            for (int i = count; i < 5; i++)
+            {
+                for (int k = 0; k < i; k++)
                 {
-                    posx = random.Next(mapWidth - sizeEnemy.width),
-                    posy = random.Next(mapHeight - sizeEnemy.height)
-                };
+                    if (collisions.BoxCollides(pos, sizeEnemy,
+                         objects.Enemies[k].posEnemy, objects.Enemies[k].sizeEnemy))
+                    {
+                        pos.posx = random.Next(mapWidth - sizeEnemy.width);
+                        pos.posy = random.Next(mapHeight - sizeEnemy.height);
+                        i = count - 1;
+                    }
+                }
 
                 for (int j = 0; j < objects.Walls.Count; j++)
                 {
                     if (collisions.BoxCollides(pos, sizeEnemy,
-                        new Pos() { posx = objects.Walls[j].X-5, posy = objects.Walls[j].Y-5 },
-                        new Size() { width = objects.Walls[j].Width+10, height = objects.Walls[j].Height+10 }))
+                        objects.Walls[j].posWall, objects.Walls[j].sizeWall))
                     {
                         pos.posx = random.Next(mapWidth - sizeEnemy.width);
                         pos.posy = random.Next(mapHeight - sizeEnemy.height);
-                        j = -1;
-                    }
-
-                    for (int k = 0; k < objects.Enemies.Count; k++)
-                    {
-                        if (collisions.BoxCollides(pos, sizeEnemy,
-                            new Pos() { posx = objects.Enemies[k].X - 5, posy = objects.Enemies[k].Y - 5 },
-                            new Size() { width = objects.Walls[k].Width + 10, height = objects.Walls[k].Height + 10 }))
-                        {
-                            pos.posx = random.Next(mapWidth - sizeEnemy.width);
-                            pos.posy = random.Next(mapHeight - sizeEnemy.height);
-                            j = -1;
-                            k = -1;
-                        }
+                        i = count - 1;
                     }
                 }
 
-                objects.Enemies.Add(new EnemyView(pos.posx, pos.posy, sizeEnemy.width,
-                   sizeEnemy.height, RandomDirection(), 9));
-            }
+                if (collisions.BoxCollides(pos, sizeEnemy,
+                        objects.Player.posPlayer, objects.Player.sizePlayer))
+                {
+                    pos.posx = random.Next(mapWidth - sizeEnemy.width);
+                    pos.posy = random.Next(mapHeight - sizeEnemy.height);
+                    i = count - 1;
+                }
 
-            Direction RandomDirection()
-            {
-                var directions = Enum.GetValues(typeof(Direction));
-                return (Direction)directions.GetValue(random.Next(directions.Length));
+                if (i > count - 1)
+                {
+                    objects.Enemies.Add(new EnemyView(pos.posx, pos.posy, sizeEnemy.width,
+                      sizeEnemy.height, RandomDirection(), 2));
+                    count++;
+                }
+                
             }
         }
+
+        public Direction RandomDirection()
+        {
+            var directions = Enum.GetValues(typeof(Direction));
+            return (Direction)directions.GetValue(random.Next(directions.Length));
+        }
+       
     }
 }

@@ -42,11 +42,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(780, 540);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timer
             // 
-            this.timer.Interval = 150;
+            this.timer.Interval = 1;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // MainForm
@@ -56,7 +55,9 @@
             this.ClientSize = new System.Drawing.Size(779, 541);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

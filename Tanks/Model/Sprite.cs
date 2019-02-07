@@ -24,7 +24,7 @@ namespace Model
     {
         string URL;
         Image sprite;
-        Pos pos;
+        public Pos pos;
         Size size;
         int speed;
         double index = 0;
@@ -41,12 +41,12 @@ namespace Model
 
         public void Update(float dt)
         {
-            index += Math.Floor(speed * dt/150);
+            index = speed * dt/10f;
         }
 
         public void Render()
         {
-            if (speed > 0 )
+            if (speed > 0)
             {
                 index = index % frames;
             }

@@ -9,9 +9,12 @@ namespace Model
 {
    public interface IGameModel
     {
-        void NewGame();
-        void Draw(Graphics graf);
-        void Update(int msc);
-        void ChangeDiriction(Direction direction);
+        void NewGame(bool gameOver);
+        bool Update(int msc);
+        void ChangePlayerDirection(Direction direction);
+        void GameOver();
+        void Move();
+        ref int GetScore();
+        void Shoot();
     }
 }

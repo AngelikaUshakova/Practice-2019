@@ -10,22 +10,24 @@ namespace Model.EntitiesView
    public class AppleView : Apple
     {
         Sprite sprite;
+        public Pos posApple = new Pos();
+        public Size sizeApple = new Size();
 
         public AppleView(int x, int y, int width, int height) : base(x, y, width, height)
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
-            Pos pos = new Pos { posx = 0, posy = 0 };
-            Size size = new Size { width = width, height = height };
+            posApple.posx = x;
+            posApple.posy = y;
+            sizeApple.width = width;
+            sizeApple.height = height;
 
-            sprite = new Sprite("Apple.png", pos, size, 1);
+            Pos pos = new Pos { posx = 0, posy = 0 };
+
+            sprite = new Sprite("Apple.png", pos, sizeApple, 1);
         }
 
         public void Draw(Graphics graf)
         {
-            sprite.Draw(graf, X, Y);
+            sprite.Draw(graf, posApple.posx, posApple.posy);
         }
     }
 }

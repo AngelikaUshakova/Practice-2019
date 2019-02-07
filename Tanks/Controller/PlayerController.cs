@@ -18,24 +18,47 @@ namespace Controller
             this.model = model;
         }
 
-        public void Draw(Graphics graf)
+        public ref int GetScore()
         {
-            throw new NotImplementedException();
+            return ref model.GetScore();
         }
 
-        public void KeyStroke(Keys key)
+        public void KeyStroke(Keys key, bool gameOver)
         {
-            throw new NotImplementedException();
+            if (gameOver)
+            {
+                if (key == Keys.Space)
+                {
+                    NewGame();
+                }
+            }
+            else
+            {
+                switch (key)
+                {
+                    case Keys.A: model.ChangePlayerDirection(Direction.LEFT);
+                        
+                        break;
+                    case Keys.D: model.ChangePlayerDirection(Direction.RIGHT);
+                        break;
+                    case Keys.S: model.ChangePlayerDirection(Direction.DOWN);
+                        break;
+                    case Keys.W: model.ChangePlayerDirection(Direction.UP);
+                        break;
+                    case Keys.Space: model.Shoot();
+                        break;
+                }
+            }
         }
 
         public void NewGame()
         {
-            model.NewGame();
+            model.NewGame(false);
         }
 
-        public void Update(int msc)
+        public bool Update(int msc)
         {
-            model.Update(msc);
+           return model.Update(msc);
         }
     }
 }
